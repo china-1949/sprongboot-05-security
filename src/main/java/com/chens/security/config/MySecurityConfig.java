@@ -20,10 +20,14 @@ public class MySecurityConfig  extends WebSecurityConfigurerAdapter {
                 .antMatchers("/level2/**").hasRole("VIP2")
                 .antMatchers("/level3/**").hasRole("VIP3");
         //开启自动配置的登录功能 ，演示效果如果没有权限就会来到登录页面
-        http.formLogin();
+     //   http.formLogin();   //系统登录页面
+        http.formLogin().usernameParameter("user").passwordParameter("pwd").loginPage("/userlogin"); //自己的的登录页面
         //1./login 来到登录页
         //2.重定向到/login?error标识登录失败
         //3.更多详细的规定
+        //4.默认使用post形式的 /login代表处理登录
+        //5.自定义loginPage则post请求是登陆，get请求跳转登录页  或者后面.logoutSuccessUrl("/login")
+
         //生成了springSecurity的自动登录页面
 
         //开启自动配置的注销功能
@@ -33,7 +37,8 @@ public class MySecurityConfig  extends WebSecurityConfigurerAdapter {
         http.logout().logoutSuccessUrl("/");  //注销成功来首页
 
         //开启记住我功能
-        http.rememberMe();
+      //  http.rememberMe();  //系统的
+        http.rememberMe().rememberMeParameter("rember");  //自定义的
         //登录成功以后，将cookie发给浏览器，以后访问页面带上这个cookie，只要通过检查就可以免登录
         //点击注销可以删除这个cookie
 
