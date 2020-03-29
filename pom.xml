@@ -16,9 +16,9 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <thymeleaf.version>3.0.11.RELEASE</thymeleaf.version>
-        <thymeleaf-layout-dialect.version>2.3.0</thymeleaf-layout-dialect.version>
-        <thymeleaf-extras-springsecurity.version>3.0.4.RELEASE</thymeleaf-extras-springsecurity.version>
+        <!--<thymeleaf.version>3.0.11.RELEASE</thymeleaf.version>-->
+        <!--<thymeleaf-layout-dialect.version>2.3.0</thymeleaf-layout-dialect.version>-->
+        <!--<thymeleaf-extras-springsecurity.version>3.0.4.RELEASE</thymeleaf-extras-springsecurity.version>-->
 
 
     </properties>
